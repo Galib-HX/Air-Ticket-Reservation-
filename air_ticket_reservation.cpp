@@ -16,6 +16,22 @@ string ticket_code();
 void Flight_Schedule_info();
 
 // File Handling
+void File(int passengerCount, string Name, string Address, string Age, string Phone_number, string CODE)
+{
+
+    ofstream file("Database.txt", ios::app);
+
+
+    file << "\t_____________ SRH Domestic Air Line _______________\n"<< endl;
+    file << left << setw(20) << "PASSENGER SERIAL : " << setw(30) << passengerCount + 1 << endl;
+    file << left << setw(20) << "PASSENGER NAME :" << setw(30) << Name << "|\tTicket code: " << CODE << endl;
+    file << left << setw(20) << "ADDRESS        :" << setw(30) << Address << "| " << endl;
+    file << left << setw(20) << "AGE            :" << setw(30) << Age << "|" << endl;
+    file << left << setw(20) << "PHONE NUMBER   :" << setw(30) << Phone_number << "|" << endl;
+    file<< "\n";
+
+    file.close();
+}
 
 // Auto string generate for ticket code
 string ticket_code()

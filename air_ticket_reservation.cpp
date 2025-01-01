@@ -18,6 +18,19 @@ void Flight_Schedule_info();
 // File Handling
 
 // Auto string generate for ticket code
+string ticket_code()
+
+{
+    string code = "";
+    const char chars[] = "ASDFGHJKLPOIUYTR12345678901234567890123456789";
+    srand(time(0));
+    for (int i = 0; i < 5; ++i)
+    {
+        code += chars[rand() % (sizeof(chars) - 1)];
+    }
+
+    return code;
+}
 
 
 // Flight schedule information

@@ -91,7 +91,68 @@ class Flight_Schedule
 
 // Class 2 for Flight booking
 class Book_Flight
-{
+{public:
+    string store[3];
+    // static int ticlet_number ;
+    void Book()
+    {
+        cout << "\t         Select your Destination\n\n";
+        cout << "\t         From : ";
+        cin >> From[passenger_count];
+        cout << "\t         To : ";
+        cin >> To[passenger_count];
+        cout << "\t         Date and Month : ";
+        ;
+        cin.ignore();
+        getline(cin, D_M[passenger_count]);
+        cout << "\n---------------------------------------Flight Schedule---------------------------------------\n";
+        cout << "\n";
+        Flight_Schedule_info();
+
+        cout << "\nSelect your flight schedule (1-5): ";
+        int sl;
+        cin >> sl;
+        if (sl >= 1 && sl <= 5)
+        {
+            string flight_name[] = {"Air Astra-3319", "Novo Air-1971", "US-Bangla-2441", "Novo Air-300", "BD Airline-44"};
+            string departure[] = {"10:00 AM", "05:26 PM", "10:00 AM", "05:26 PM", "05:26 PM"};
+            string arrival[] = {"12:45 AM", "07:26 PM", "01:25 PM", "08:36 PM", "09:26 PM"};
+            string fare[] = {"350$", "450$", "606$", "405$", "630$"};
+            Flight_name[passenger_count] = flight_name[sl - 1];
+            Time[passenger_count] = arrival[sl - 1];
+            Departure[passenger_count] = departure[sl - 1];
+            Arrival[passenger_count] = arrival[sl - 1];
+            Fare[passenger_count] = fare[sl - 1];
+        }
+
+        else
+        {
+            cout << "Invalid Choice ! Back to the main menu\n";
+            interface();
+        }
+    }
+    void passenger_info()
+    {
+
+        cout << "\n----------Give your personal information----------\n";
+        cout << "\nEnter your name : ";
+        cin.ignore();
+        getline(cin, Name[passenger_count]);
+        cout << "Enter your address : ";
+        getline(cin, Address[passenger_count]);
+        cout << "Enter your age : ";
+        cin >> Age[passenger_count];
+        cout << "Enter phone number : ";
+        cin >> Phone_number[passenger_count];
+        CODE[passenger_count] = ticket_code();
+        cout << "\nYou reserve a seat successfully \n";
+        cout << "\nYou ticket code is : " << CODE[passenger_count];
+
+        cout << "\n---------- *** Please keep remember your ticket code for future reference  ----------\n";
+
+        File(passenger_count, Name[passenger_count], Address[passenger_count], Age[passenger_count], Phone_number[passenger_count], CODE[passenger_count]);
+        passenger_count++;
+    }
 
 };
 
@@ -99,6 +160,41 @@ class Book_Flight
 class Check_Ticket_Information
 
 {
+    public:
+    string temp_code;
+    int choice;
+    void c_t_inf_()
+    {
+        if (passenger_count == 0)
+        {
+            cout << "\n\t         No reservation made yet !\n";
+        }
+        else
+        {
+            cout << "Enter your ticket code : ";
+            cin >> temp_code;
+            for (int i = 0; i < passenger_count; i++)
+            {
+                if (CODE[i] == temp_code)
+                {
+
+                    cout << "\n\n\n\t_____________ SRH Domestic Air Line _______________\n"
+                         << endl;
+                    cout << left << setw(20) << "FLIGHT -------------" << setw(30) << " BOARDING TIME -------------- " << "|\tCLASS: Business" << endl;
+                    cout << left << setw(20) << Flight_name[i] << setw(30) << "  10:00 PM" << "|\t" << endl;
+                    cout << left << setw(50) << " " << "|\t" << endl;
+                    cout << left << setw(20) << "PASSENGER NAME :" << setw(30) << Name[i] << "|\tTicket code: " << CODE[i] << endl;
+                    cout << left << setw(20) << "FROM           :" << setw(30) << From[i] << "|\tTO: " << To[i] << endl;
+                    cout << left << setw(20) << "Departure      :" << setw(30) << Departure[i] << "|\tArrival: " << Arrival[i] << endl;
+                    cout << left << setw(20) << "DATE           :" << setw(30) << D_M[i] << "|\t" << endl;
+                    cout << "\n\n";
+                    return;
+                }
+            }
+            cout << "Invalid Ticket Code!\nPlease try again";
+            c_t_inf_();
+        }
+    }
 
 };
 

@@ -1,4 +1,4 @@
-# SRH Domestic Airline Reservation System
+# Airline Reservation System
 
 This project is a **C++ console application** that simulates a simple airline ticket reservation system. It allows users to view flight schedules, book flights, and check ticket information. The application manages data using file handling and generates unique ticket codes for passengers.
 

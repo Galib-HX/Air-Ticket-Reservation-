@@ -67,7 +67,45 @@ class Book_Flight
 class Check_Ticket_Information
 
 {
+class Check_Ticket_Information
+{
+public:
+    string temp_code;
+    int choice;
+    void c_t_inf_()
+    {
+        if (passenger_count == 0)
+        {
+            cout << "\n\t         No reservation made yet !\n";
+        }
+        else
+        {
+            cout << "\t         Enter your ticket code : ";
+            cin >> temp_code;
+            for (int i = 0; i < passenger_count; i++)
+            {
+                if (CODE[i] == temp_code)
+                {
 
+                    cout << "\n\n\n\t_____________ SRH Domestic Air Line _______________\n"
+                         << endl;
+                    cout << left << setw(20) << "FLIGHT -------------" << setw(30) << " BOARDING TIME -------------- " << "|\tCLASS: "<<CLASS[i] << endl;
+                    cout << left << setw(20) << Flight_name[i] << setw(30) << "  10:00 PM" << "|\t" << endl;
+                    cout << left << setw(50) << " " << "|\t" << endl;
+                    cout << left << setw(20) << "PASSENGER NAME :" << setw(30) << Name[i] << "|\tTicket code: " << CODE[i] << endl;
+                    cout << left << setw(20) << "FROM           :" << setw(30) << From[i] << "|\tTO: " << To[i] << endl;
+                    cout << left << setw(20) << "Departure      :" << setw(30) << Departure[i] << "|\tArrival: " << Arrival[i] << endl;
+                    cout << left << setw(20) << "DATE           :" << setw(30) << D_M[i] << "|\tSeat number:" << seat[i] << endl;
+                    //cout << left << setw(50) << " " << "|\tSeat number:" << seat[i]<<endl;
+                    cout << "\n\n";
+                    return;
+                }
+            }
+            cout << "Invalid Ticket Code!\nPlease try again";
+            c_t_inf_();
+        }
+    }
+};
 };
 
 void interface()

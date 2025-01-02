@@ -50,10 +50,40 @@ string ticket_code()
 
 
 // Flight schedule information
+void Flight_Schedule_info()
+{
+    string Num[] = {"1", "2", "3", "4", "5"};
+    string Flight_name[] = {"Air Astra-3319", "Novo Air-1971", "US-Bangla-2441", "Nov oAir-300", "BD Airline-44"};
+    string Departure[] = {"10:00 AM", "05:26 PM", "10:00 AM", "05:26 PM", "05:26 PM"};
+    string Arrival[] = {"12:45 AM", "07:26 PM", "01:25 PM", "08:36 PM", "09:26 PM"};
+    cout << "Serial\t\t" << "Avilavle Flights\t" << "Departure\t" << "\tArrival\t" << endl
+         << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << Num[i] << "\t" << "\t";
+        cout << Flight_name[i] << "\t" << "\t";
+        cout << Departure[i] << "\t" << "\t";
+        cout << Arrival[i] << "\t" << "\t"<<endl;
+       
+    }
+}
 
 // Classs 1 for Flight schedule
 class Flight_Schedule
 {
+    public:
+    string from, to;
+    void Schedule()
+    {
+        cout << "\t         Select your Destination\n\n";
+        cout << "\t         From : ";
+        cin >> from;
+        cout << "\t         To : ";
+        cin >> to;
+        cout << "\n-----------------------------Flight Schedule-----------------------------\n";
+        cout << "\n";
+        Flight_Schedule_info();
+    }
 
 };
 

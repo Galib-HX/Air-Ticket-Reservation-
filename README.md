@@ -62,7 +62,7 @@ Technologies Used
 How to Run
 ----------
 
-1.  bashCopy codegit clone [https://github.com/Hasibul/SRH-Airline-Reservation-System.git](https://github.com/Hasibul-Hasan-Git/Air-Ticket-Reservation-.git)
+1.  bashCopy codegit clone : (https://github.com/Galib-HX/Air-Ticket-Reservation-.git)
     
 2.  bashCopy codeg++ -o AirlineReservationSystem AirlineReservationSystem.cpp
     

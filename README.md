@@ -118,15 +118,15 @@ Contribution
 
 2.Hasibul Hasan
 
-3\. Arshadur Rahman Rohid
+3.Arshadur Rahman Rohid
 
 Contact
 -------
 
 For any questions or issues, please contact:
 
-*   **Name**:Galib Hasan Sweet
+*   **Name**: Md.Galib Hasan Sweet
     
-*   **Email**:galib.hx@gmail.com
+*   **Email**: galib.hx@gmail.com
     
 *   **GitHub**: Galib-HX

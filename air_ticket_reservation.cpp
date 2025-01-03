@@ -95,7 +95,7 @@ public:
     virtual void Fare_cost(){}
 };
 
-
+// Galib u r a noob programmer....shame
 class Economy_class : public Seat
 {
 public:

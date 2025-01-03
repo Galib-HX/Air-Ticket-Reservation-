@@ -125,7 +125,7 @@ Contact
 
 For any questions or issues, please contact:
 
-*   **Name**: Md.Galib Hasan Sweet
+*   **Name**: Md.Galib Hassan Sweet
     
 *   **Email**: galib.hx@gmail.com
     
